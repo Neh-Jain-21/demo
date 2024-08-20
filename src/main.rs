@@ -69,9 +69,9 @@ fn control_flows() {
 
     println!("The number is {result}");
 
-    let mut counter = 0;
+    let mut counter: i32 = 0;
 
-    let counter_result = loop {
+    let counter_result: i32 = loop {
         counter += 1;
 
         if counter == 10 {
@@ -80,4 +80,20 @@ fn control_flows() {
     };
 
     println!("Counter value is {counter_result}");
+
+    while counter != 0 {
+        println!("{counter}");
+
+        counter -= 1;
+    }
+
+    println!("While loop over!");
+
+    let a: [i32; 5] = [1, 2, 3, 4, 5];
+
+    for element in a {
+        println!("For loop count {element}");
+    }
+
+    println!("For loop over");
 }
