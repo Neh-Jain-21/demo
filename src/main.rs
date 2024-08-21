@@ -1,10 +1,10 @@
 fn main() {
-    println!("Hello, world!");
-
     // variables_and_mutability();
     // data_types();
     // functions();
-    control_flows();
+    // control_flows();
+
+    ownership();
 }
 
 // fn variables_and_mutability() {
@@ -52,48 +52,66 @@ fn main() {
 //     println!("The value of x is: {x}");
 // }
 
-fn control_flows() {
-    let number: i32 = 5;
+// fn control_flows() {
+//     let number: i32 = 5;
 
-    if number == 5 {
-        println!("Number is 5");
-    } else if number >= 0 {
-        print!("Number is positive")
-    } else {
-        println!("Number is negative");
+//     if number == 5 {
+//         println!("Number is 5");
+//     } else if number >= 0 {
+//         print!("Number is positive")
+//     } else {
+//         println!("Number is negative");
+//     }
+
+//     // Short hand if else
+//     let condition: bool = true;
+//     let result: i32 = if condition { 1 } else { 0 };
+
+//     println!("The number is {result}");
+
+//     let mut counter: i32 = 0;
+
+//     let counter_result: i32 = loop {
+//         counter += 1;
+
+//         if counter == 10 {
+//             break counter * 2;
+//         }
+//     };
+
+//     println!("Counter value is {counter_result}");
+
+//     while counter != 0 {
+//         println!("{counter}");
+
+//         counter -= 1;
+//     }
+
+//     println!("While loop over!");
+
+//     let a: [i32; 5] = [1, 2, 3, 4, 5];
+
+//     for element in a {
+//         println!("For loop count {element}");
+//     }
+
+//     println!("For loop over");
+// }
+
+fn ownership() {
+    let s: String = String::from("hello");
+
+    takes_ownership(s);
+
+    let x: i32 = 5;
+
+    makes_copy(x);
+
+    fn takes_ownership(some_string: String) {
+        println!("{some_string}");
     }
 
-    // Short hand if else
-    let condition: bool = true;
-    let result: i32 = if condition { 1 } else { 0 };
-
-    println!("The number is {result}");
-
-    let mut counter: i32 = 0;
-
-    let counter_result: i32 = loop {
-        counter += 1;
-
-        if counter == 10 {
-            break counter * 2;
-        }
-    };
-
-    println!("Counter value is {counter_result}");
-
-    while counter != 0 {
-        println!("{counter}");
-
-        counter -= 1;
+    fn makes_copy(some_integer: i32) {
+        println!("{some_integer}");
     }
-
-    println!("While loop over!");
-
-    let a: [i32; 5] = [1, 2, 3, 4, 5];
-
-    for element in a {
-        println!("For loop count {element}");
-    }
-
-    println!("For loop over");
 }
