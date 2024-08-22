@@ -1,5 +1,6 @@
 fn main() {
-    references_and_borrowing();
+    slice_type();
+    // references_and_borrowing();
     // ownership();
 
     // control_flows();
@@ -8,18 +9,32 @@ fn main() {
     // variables_and_mutability();
 }
 
-fn references_and_borrowing() {
-    let mut str: String = String::from("hello");
-    let new_str: &str = ", world";
+fn slice_type() {
+    let ex_str: String = String::from("Hello World");
 
-    append_str(&mut str, &new_str);
+    let first_word = get_first_word(&ex_str);
 
-    println!("{str}");
+    println!("First word - {first_word}");
 
-    fn append_str(s: &mut String, new_str: &str) {
-        s.push_str(new_str);
+    fn first_word(s: &str) {
+        let bytes = s.as_bytes();
+
+
     }
 }
+
+// fn references_and_borrowing() {
+//     let mut str: String = String::from("hello");
+//     let new_str: &str = ", world";
+
+//     append_str(&mut str, &new_str);
+
+//     println!("{str}");
+
+//     fn append_str(s: &mut String, new_str: &str) {
+//         s.push_str(new_str);
+//     }
+// }
 
 // fn ownership() {
 //     let s: String = String::from("hello");
