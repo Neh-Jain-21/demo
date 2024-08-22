@@ -1,55 +1,42 @@
 fn main() {
-    // variables_and_mutability();
-    // data_types();
-    // functions();
-    // control_flows();
+    references_and_borrowing();
+    // ownership();
 
-    ownership();
+    // control_flows();
+    // functions();
+    // data_types();
+    // variables_and_mutability();
 }
 
-// fn variables_and_mutability() {
-//     // Mutable variable.
-//     let mut x: i32 = 5;
-//     println!("The value of x is: {x}");
+fn references_and_borrowing() {
+    let mut str: String = String::from("hello");
+    let new_str: &str = ", world";
 
-//     x = 6;
-//     println!("The value of x changed to: {x}");
+    append_str(&mut str, &new_str);
 
-//     // Constant variable.
-//     const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
-//     println!("The value of THREE_HOURS_IN_SECONDS is: {THREE_HOURS_IN_SECONDS}");
+    println!("{str}");
 
-//     // Shadowing
-//     let shadow: i32 = 10;
-//     let shadow: i32 = shadow + 1;
+    fn append_str(s: &mut String, new_str: &str) {
+        s.push_str(new_str);
+    }
+}
 
-//     println!("The value of shadow is: {shadow}");
-// }
+// fn ownership() {
+//     let s: String = String::from("hello");
 
-// fn data_types() {
-//     const _SIGNED_INTEGER: usize = 5;
-//     let _unsigned_integer: i32 = -10;
-//     let _floating_point: f64 = 10.0;
-//     let _character: char = 'a';
-//     let _boolean: bool = true;
-//     let _string: &str = "Hello, world!";
+//     takes_ownership(s);
 
-//     let tuple: (i32, &str) = (10, "Hello, world!");
-//     let tuple_second: &str = tuple.1;
-//     println!("The value of tuple at index 2 is: {tuple_second}");
+//     let x: i32 = 5;
 
-//     let array: [i32; 5] = [1, 2, 3, 4, 5];
-//     let array_second: i32 = array[2];
-//     println!("The value of array at index 2 is: {array_second}");
-// }
+//     makes_copy(x);
 
-// fn five() -> i32 {
-//     return 5;
-// }
+//     fn takes_ownership(some_string: String) {
+//         println!("{some_string}");
+//     }
 
-// fn functions() {
-//     let x: i32 = five();
-//     println!("The value of x is: {x}");
+//     fn makes_copy(some_integer: i32) {
+//         println!("{some_integer}");
+//     }
 // }
 
 // fn control_flows() {
@@ -98,20 +85,47 @@ fn main() {
 //     println!("For loop over");
 // }
 
-fn ownership() {
-    let s: String = String::from("hello");
+// fn functions() {
+//     let x: i32 = five();
+//     println!("The value of x is: {x}");
 
-    takes_ownership(s);
+//     fn five() -> i32 {
+//         return 5;
+//     }
+// }
 
-    let x: i32 = 5;
+// fn data_types() {
+//     const _SIGNED_INTEGER: usize = 5;
+//     let _unsigned_integer: i32 = -10;
+//     let _floating_point: f64 = 10.0;
+//     let _character: char = 'a';
+//     let _boolean: bool = true;
+//     let _string: &str = "Hello, world!";
 
-    makes_copy(x);
+//     let tuple: (i32, &str) = (10, "Hello, world!");
+//     let tuple_second: &str = tuple.1;
+//     println!("The value of tuple at index 2 is: {tuple_second}");
 
-    fn takes_ownership(some_string: String) {
-        println!("{some_string}");
-    }
+//     let array: [i32; 5] = [1, 2, 3, 4, 5];
+//     let array_second: i32 = array[2];
+//     println!("The value of array at index 2 is: {array_second}");
+// }
 
-    fn makes_copy(some_integer: i32) {
-        println!("{some_integer}");
-    }
-}
+// fn variables_and_mutability() {
+//     // Mutable variable.
+//     let mut x: i32 = 5;
+//     println!("The value of x is: {x}");
+
+//     x = 6;
+//     println!("The value of x changed to: {x}");
+
+//     // Constant variable.
+//     const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
+//     println!("The value of THREE_HOURS_IN_SECONDS is: {THREE_HOURS_IN_SECONDS}");
+
+//     // Shadowing
+//     let shadow: i32 = 10;
+//     let shadow: i32 = shadow + 1;
+
+//     println!("The value of shadow is: {shadow}");
+// }
