@@ -1,8 +1,10 @@
+mod common_collections;
 mod common_programming_concepts;
 mod enums;
 mod structures;
 mod understanding_ownership;
 
+use common_collections::vectors::vectors;
 use common_programming_concepts::{
     control_flows::control_flows, data_types::data_types, functions::functions,
     variables_and_mutability::variables_and_mutability,
@@ -15,6 +17,8 @@ use understanding_ownership::{
 };
 
 fn main() {
+    vectors();
+
     enums();
 
     struct_method_syntax();
