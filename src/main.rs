@@ -4,7 +4,7 @@ mod enums;
 mod structures;
 mod understanding_ownership;
 
-use common_collections::vectors::vectors;
+use common_collections::{hash_maps::hash_maps, vectors::vectors};
 use common_programming_concepts::{
     control_flows::control_flows, data_types::data_types, functions::functions,
     variables_and_mutability::variables_and_mutability,
@@ -17,6 +17,7 @@ use understanding_ownership::{
 };
 
 fn main() {
+    hash_maps();
     vectors();
 
     enums();
