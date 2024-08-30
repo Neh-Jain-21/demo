@@ -1,6 +1,7 @@
 mod common_collections;
 mod common_programming_concepts;
 mod enums;
+mod error_handling;
 mod structures;
 mod understanding_ownership;
 
@@ -10,6 +11,7 @@ use common_programming_concepts::{
     variables_and_mutability::variables_and_mutability,
 };
 use enums::enums::enums;
+use error_handling::recoverable_errors::recoverable_errors;
 use structures::{struct_method_syntax::struct_method_syntax, structs::structs};
 use understanding_ownership::{
     ownership::ownership, references_and_borrowing::references_and_borrowing,
@@ -17,6 +19,8 @@ use understanding_ownership::{
 };
 
 fn main() {
+    recoverable_errors();
+
     hash_maps();
     vectors();
 
