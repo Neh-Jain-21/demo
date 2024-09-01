@@ -2,6 +2,7 @@ mod common_collections;
 mod common_programming_concepts;
 mod enums;
 mod error_handling;
+mod generic_types_traits_and_lifetimes;
 mod structures;
 mod understanding_ownership;
 
@@ -12,6 +13,7 @@ use common_programming_concepts::{
 };
 use enums::enums::enums;
 use error_handling::recoverable_errors::recoverable_errors;
+use generic_types_traits_and_lifetimes::{generic_types::generic_types, traits::traits};
 use structures::{struct_method_syntax::struct_method_syntax, structs::structs};
 use understanding_ownership::{
     ownership::ownership, references_and_borrowing::references_and_borrowing,
@@ -19,6 +21,9 @@ use understanding_ownership::{
 };
 
 fn main() {
+    traits();
+    generic_types();
+
     recoverable_errors();
 
     hash_maps();
