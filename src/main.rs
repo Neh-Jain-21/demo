@@ -13,7 +13,9 @@ use common_programming_concepts::{
 };
 use enums::enums::enums;
 use error_handling::recoverable_errors::recoverable_errors;
-use generic_types_traits_and_lifetimes::{generic_types::generic_types, traits::traits};
+use generic_types_traits_and_lifetimes::{
+    generic_types::generic_types, lifetimes::lifetimes, traits::traits,
+};
 use structures::{struct_method_syntax::struct_method_syntax, structs::structs};
 use understanding_ownership::{
     ownership::ownership, references_and_borrowing::references_and_borrowing,
@@ -21,6 +23,7 @@ use understanding_ownership::{
 };
 
 fn main() {
+    lifetimes();
     traits();
     generic_types();
 
